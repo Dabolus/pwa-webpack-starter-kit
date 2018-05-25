@@ -35,6 +35,8 @@ module.exports = {
     chunkFilename: 'scripts/[id].js',
     path: resolve(__dirname, '../build'),
     pathinfo: false,
+    crossOriginLoading: 'anonymous',
+    jsonpScriptType: 'module',
   },
   resolve: {
     extensions: [ '.ts', '.js', '.scss', '.sass', '.css' ],
