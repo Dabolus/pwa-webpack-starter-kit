@@ -1,0 +1,60 @@
+{
+  "name": "pwa-webpack-starter-kit",
+  "version": "1.0.0",
+  "description": "PWA Starter Kit with Webpack",
+  "author": "Giorgio Garasto <mail@dabolus.app>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "yarn run serve",
+    "serve": "webpack-serve webpack/dev.config.js",
+    "check": "gts check",
+    "clean": "gts clean",
+    "fix": "gts fix",
+    "posttest": "yarn run check"
+  },
+  "dependencies": {
+    "@polymer/app-layout": "^3.0.0-pre.19",
+    "@polymer/lit-element": "^0.5.1",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "pwa-helpers": "^0.8.2",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.48",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.48",
+    "@babel/preset-env": "^7.0.0-beta.48",
+    "babel-loader": "^8.0.0-beta.3",
+    "cache-loader": "^1.2.2",
+    "chai": "^4.1.2",
+    "connect-history-api-fallback": "^1.5.0",
+    "fork-ts-checker-webpack-plugin": "^0.4.1",
+    "gts": "^0.6.0",
+    "karma": "^2.0.2",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-sinon": "^1.0.5",
+    "karma-webpack": "^3.0.0",
+    "koa-connect": "^2.0.1",
+    "mocha": "^5.2.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
+    "puppeteer": "^1.4.0",
+    "sinon": "^5.0.10",
+    "thread-loader": "^1.1.5",
+    "ts-loader": "^4.3.0",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4",
+    "webpack-merge": "^4.1.2",
+    "webpack-serve": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=8.3"
+  }
+}
