@@ -5,9 +5,9 @@ const convert = require('koa-connect');
 module.exports = {
   content: resolve(__dirname, '../build'),
   hot: true,
-  port: 8081,
+  port: 8080,
   dev: {
-    publicPath: 'http://localhost:8081/',
+    publicPath: 'http://localhost:8080/',
   },
   open: {
     path: '/',

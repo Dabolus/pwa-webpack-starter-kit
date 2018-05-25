@@ -28,7 +28,7 @@ module.exports = {
   cache: true,
   context: resolve(__dirname, '..'),
   entry: {
-    app: './src',
+    app: './src/components/my-app',
   },
   output: {
     filename: 'scripts/[name].js',
@@ -37,7 +37,10 @@ module.exports = {
     pathinfo: false,
   },
   resolve: {
-    extensions: [ '.ts', '.js' ],
+    extensions: [ '.ts', '.js', '.scss', '.sass', '.css' ],
+    alias: {
+      '~': './src',
+    },
   },
   module: {
     rules: [
@@ -64,7 +67,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.ts$/,
+        test: /\.js$/,
         use: [
           { loader: 'cache-loader' },
           {
@@ -74,6 +77,35 @@ module.exports = {
             },
           },
           babelLoader,
+        ],
+      },
+      {
+        test: /\.s[ac]ss$/,
+        use: [
+          {
+            loader: 'to-lit-html-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          /* {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: resolve(__dirname, '../postcss.config.js'),
+                ctx: config,
+              },
+            },
+          }, */
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [ './node_modules' ],
+            },
+          },
         ],
       },
     ],
