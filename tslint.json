@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "./node_modules/gts/tslint.json"
+  ]
+}
