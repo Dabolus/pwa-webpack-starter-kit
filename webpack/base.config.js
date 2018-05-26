@@ -7,22 +7,29 @@ const cpusToUse = Math.max(1, Math.floor(maxCpus / 2));
 warmup({
   workers: cpusToUse,
 }, [
-  'babel-loader',
-  '@babel/preset-env',
-  '@babel/plugin-syntax-dynamic-import',
+  // 'babel-loader',
+  // '@babel/preset-env',
+  // '@babel/plugin-syntax-dynamic-import',
   'ts-loader',
 ]);
 
-const babelLoader = {
+// Currently we don't need babel
+/* const babelLoader = {
   loader: 'babel-loader',
   options: {
     cacheDirectory: true,
-    presets: [ '@babel/preset-env' ],
+    presets: [ [ '@babel/preset-env', {
+      targets: {
+        browsers: 'last 2 versions',
+      },
+      modules: false,
+      loose: true,
+    } ] ],
     plugins: [
       '@babel/plugin-syntax-dynamic-import',
     ],
   },
-};
+}; */
 
 module.exports = {
   cache: true,
@@ -39,10 +46,11 @@ module.exports = {
     jsonpScriptType: 'module',
   },
   resolve: {
-    extensions: [ '.ts', '.js', '.scss', '.sass', '.css' ],
+    extensions: [ '.ts', '.js', '.scss', '.sass', '.css', '.html' ],
     alias: {
       '~': './src',
     },
+    modules: [ './src', 'node_modules' ],
   },
   module: {
     rules: [
@@ -56,7 +64,7 @@ module.exports = {
               workers: cpusToUse,
             },
           },
-          babelLoader,
+          // babelLoader,
           {
             loader: 'ts-loader',
             options: {
@@ -68,7 +76,7 @@ module.exports = {
           },
         ],
       },
-      {
+      /* {
         test: /\.js$/,
         use: [
           { loader: 'cache-loader' },
@@ -80,7 +88,7 @@ module.exports = {
           },
           babelLoader,
         ],
-      },
+      }, */
       {
         test: /\.s[ac]ss$/,
         use: [

@@ -1,7 +1,7 @@
 import { lazyReducerEnhancer } from 'pwa-helpers/lazy-reducer-enhancer';
 import { applyMiddleware, combineReducers, compose as origCompose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { StoreWithThunk } from '../custom_typings/vendor';
+import { StoreWithThunk } from '../custom_typings/redux-thunk';
 import app from './reducers/app';
 
 // TODO: Uncomment this line as soon as Redux Devtools Chrome Extension adds compatibiliy for Redux 4

@@ -9,10 +9,10 @@ import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { updateMetadata } from 'pwa-helpers/metadata';
 import { installOfflineWatcher } from 'pwa-helpers/network';
 import { installRouter } from 'pwa-helpers/router';
-import { navigate, updateDrawerState, updateLayout, updateOffline } from '~/actions/app';
-import { menuIcon } from '~/components/my-icons';
-import { store } from '~/store';
-import '~/components/snack-bar';
+import { navigate, updateDrawerState, updateLayout, updateOffline } from '../../actions/app';
+import { store } from '../../store';
+import { menuIcon } from '../my-icons';
+import '../snack-bar';
 import styles from './styles.scss';
 
 class MyApp extends connect(store)(LitElement) {

@@ -1,6 +1,6 @@
 import {
   CLOSE_SNACKBAR, OPEN_SNACKBAR, UPDATE_DRAWER_STATE, UPDATE_OFFLINE, UPDATE_PAGE,
-} from '~/actions/app';
+} from '../actions/app';
 
 const app = (state = { drawerOpened: false }, action: any) => { // TODO: switch from any to a more specific action type
   switch (action.type) {
