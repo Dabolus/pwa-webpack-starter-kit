@@ -6,32 +6,7 @@ const maxCpus = require('os').cpus().length - 1;
 const cpusToUse = Math.max(1, Math.floor(maxCpus / 2));
 
 // Warm up our modules
-warmup({
-  workers: cpusToUse,
-}, [
-  // 'babel-loader',
-  // '@babel/preset-env',
-  // '@babel/plugin-syntax-dynamic-import',
-  'ts-loader',
-]);
-
-// Currently we don't need babel
-/* const babelLoader = {
-  loader: 'babel-loader',
-  options: {
-    cacheDirectory: true,
-    presets: [ [ '@babel/preset-env', {
-      targets: {
-        browsers: 'last 2 versions',
-      },
-      modules: false,
-      loose: true,
-    } ] ],
-    plugins: [
-      '@babel/plugin-syntax-dynamic-import',
-    ],
-  },
-}; */
+warmup({ workers: cpusToUse }, [ 'ts-loader' ]);
 
 module.exports = {
   cache: true,
@@ -57,7 +32,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.[jt]s$/,
         use: [
           {
             loader: 'thread-loader',
@@ -65,7 +40,6 @@ module.exports = {
               workers: cpusToUse,
             },
           },
-          // babelLoader,
           {
             loader: 'ts-loader',
             options: {
@@ -77,18 +51,6 @@ module.exports = {
           },
         ],
       },
-      /* {
-        test: /\.js$/,
-        use: [
-          {
-            loader: 'thread-loader',
-            options: {
-              workers: cpusToUse,
-            },
-          },
-          babelLoader,
-        ],
-      }, */
       {
         test: /\.s[ac]ss$/,
         use: [
