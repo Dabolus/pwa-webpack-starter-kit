@@ -3,13 +3,14 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
-const { smart: smartMerge } = require('webpack-merge');
+const { smartStrategy: smartMerge } = require('webpack-merge');
 const baseConfig = require('./base.config');
 const maxCPUs = os.cpus().length - 1;
 const maxRAM = Math.floor(os.totalmem() / 2097152); // Half the total ram in megabytes
 
-module.exports = smartMerge(baseConfig, {
+module.exports = smartMerge({
+  plugins: 'prepend',
+})(baseConfig, {
   mode: 'production',
   optimization: {
     minimizer: [
@@ -51,10 +52,6 @@ module.exports = smartMerge(baseConfig, {
       hash: true,
       inject: 'head',
       template: './src/index.html',
-    }),
-    new ScriptExtHtmlPlugin({
-      defaultAttribute: 'defer',
-      module: 'app',
     }),
   ],
 });

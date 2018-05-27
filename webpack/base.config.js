@@ -1,5 +1,7 @@
 const { resolve } = require('path');
 const { warmup } = require('thread-loader');
+const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
+const { InjectManifest: InjectManifestPlugin } = require('workbox-webpack-plugin');
 const maxCpus = require('os').cpus().length - 1;
 const cpusToUse = Math.max(1, Math.floor(maxCpus / 2));
 
@@ -118,4 +120,15 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new ScriptExtHtmlPlugin({
+      defaultAttribute: 'defer',
+      module: 'app',
+    }),
+    new InjectManifestPlugin({
+      swSrc: './src/service-worker.js',
+      swDest: './sw.js',
+      exclude: [ /webcomponents-(?!loader).*\.js$/, /images\/manifest/, /favicon\.ico$/ ],
+    }),
+  ],
 };
