@@ -10,7 +10,6 @@
 </p>
 
 ### Differences with the original [PWA Starter Kit](https://github.com/Polymer/pwa-starter-kit/)
-
 - [Polymer CLI](https://github.com/Polymer/tools/tree/master/packages/cli) → [Webpack](https://webpack.js.org/)
 - ES8 → [TypeScript](https://www.typescriptlang.org/)
 - CSS → [SCSS](https://sass-lang.com/)
