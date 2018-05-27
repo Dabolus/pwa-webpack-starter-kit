@@ -84,7 +84,8 @@ const cart = (state = INITIAL_CART, action: any) => { // TODO: switch from any t
   }
 };
 
-const addedIds = (state = INITIAL_CART.addedIds, quantityById: { [key: number]: number }, action: any) => { // TODO: switch from any to a more specific action type
+// TODO: switch from any to a more specific action type
+const addedIds = (state = INITIAL_CART.addedIds, quantityById: { [key: number]: number }, action: any) => {
   const productId: number = action.productId;
   switch (action.type) {
     case ADD_TO_CART:
@@ -148,7 +149,7 @@ export const cartItemsSelector = createSelector(
   productsSelector,
   (cart, products) => {
     const items = [];
-    for (let id of cart.addedIds) {
+    for (const id of cart.addedIds) {
       const item = products[id];
       items.push({ id: item.id, title: item.title, amount: cart.quantityById[id], price: item.price });
     }
@@ -162,20 +163,20 @@ export const cartTotalSelector = createSelector(
   productsSelector,
   (cart, products) => {
     let total = 0;
-    for (let id of cart.addedIds) {
+    for (const id of cart.addedIds) {
       const item = products[id];
       total += item.price * cart.quantityById[id];
     }
-    return parseFloat(Math.round(total * 100) / 100).toFixed(2);
+    return (Math.round(total * 100) / 100).toFixed(2);
   },
 );
 
 // Return the number of items in the cart
 export const cartQuantitySelector = createSelector(
   cartSelector,
-  cart => {
+  (cart) => {
     let num = 0;
-    for (let id of cart.addedIds) {
+    for (const id of cart.addedIds) {
       num += cart.quantityById[id];
     }
     return num;

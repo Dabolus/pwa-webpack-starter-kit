@@ -1,7 +1,7 @@
 const os = require('os');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
 const { HotModuleReplacementPlugin } = require('webpack');
 const { smart: smartMerge } = require('webpack-merge');
 const baseConfig = require('./base.config');
@@ -27,11 +27,12 @@ module.exports = smartMerge(baseConfig, {
       async: true, // make it async during development
       checkSyntacticErrors: true,
     }),
-    new HtmlWebpackPlugin({
+    new HtmlPlugin({
       inject: 'head',
       template: './src/index.html',
+      showErrors: true,
     }),
-    new ScriptExtHtmlWebpackPlugin({
+    new ScriptExtHtmlPlugin({
       defaultAttribute: 'defer',
       module: 'app',
     }),

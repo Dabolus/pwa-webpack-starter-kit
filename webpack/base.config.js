@@ -57,7 +57,6 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
-          { loader: 'cache-loader' },
           {
             loader: 'thread-loader',
             options: {
@@ -79,7 +78,6 @@ module.exports = {
       /* {
         test: /\.js$/,
         use: [
-          { loader: 'cache-loader' },
           {
             loader: 'thread-loader',
             options: {

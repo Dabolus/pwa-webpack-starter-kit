@@ -2,8 +2,8 @@ const os = require('os');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
 const { smart: smartMerge } = require('webpack-merge');
 const baseConfig = require('./base.config');
 const maxCPUs = os.cpus().length - 1;
@@ -34,7 +34,7 @@ module.exports = smartMerge(baseConfig, {
       async: false, // make it sync during production
       checkSyntacticErrors: true,
     }),
-    new HtmlWebpackPlugin({
+    new HtmlPlugin({
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -46,12 +46,13 @@ module.exports = smartMerge(baseConfig, {
         useShortDoctype: true,
         minifyCSS: true,
         minifyJS: true,
+        caseSensitive: true,
       },
       hash: true,
       inject: 'head',
       template: './src/index.html',
     }),
-    new ScriptExtHtmlWebpackPlugin({
+    new ScriptExtHtmlPlugin({
       defaultAttribute: 'defer',
       module: 'app',
     }),

@@ -1,5 +1,4 @@
 build/
 node_modules/
 .idea/
-.cache-loader/
 .DS_Store
