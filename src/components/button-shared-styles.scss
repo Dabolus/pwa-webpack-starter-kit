@@ -1,0 +1,11 @@
+button {
+  font-size: inherit;
+  vertical-align: middle;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover svg {
+    fill: var(--app-primary-color);
+  }
+}

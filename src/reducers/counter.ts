@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT } from '~/actions/counter';
+import { DECREMENT, INCREMENT } from '../actions/counter';
 
 const counter = (state = { clicks: 0, value: 0 }, action: any) => { // TODO: switch from any to a more specific action type
   switch (action.type) {

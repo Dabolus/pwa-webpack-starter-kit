@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { ADD_TO_CART, CHECKOUT_FAILURE, CHECKOUT_SUCCESS, GET_PRODUCTS, REMOVE_FROM_CART } from '~/actions/shop';
+import { ADD_TO_CART, CHECKOUT_FAILURE, CHECKOUT_SUCCESS, GET_PRODUCTS, REMOVE_FROM_CART } from '../actions/shop';
 
 const INITIAL_CART = {
   addedIds: [],
@@ -101,7 +101,7 @@ const addedIds = (state = INITIAL_CART.addedIds, quantityById: { [key: number]: 
       // cart during the remove action, you'll have 0.
       if (quantityById[productId] <= 1) {
         // This removes all items in this array equal to productId.
-        return state.filter(e => e !== productId);
+        return state.filter((e) => e !== productId);
       }
       return state;
     default:
@@ -140,8 +140,8 @@ export default shop;
 // We use a tiny library called `reselect` to create efficient
 // selectors. More info: https://github.com/reduxjs/reselect.
 
-const cartSelector = state => state.shop.cart;
-const productsSelector = state => state.shop.products;
+const cartSelector = (state) => state.shop.cart;
+const productsSelector = (state) => state.shop.products;
 
 // Return a flattened array representation of the items in the cart
 export const cartItemsSelector = createSelector(

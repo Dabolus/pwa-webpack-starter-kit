@@ -34,10 +34,11 @@ const loadPage = (page: string) => async (dispatch: Dispatch<any, void>) => {
       // navigate to view1 page and my-view1.js is loaded
       break;
     case 'view2':
-      // await import('~/components/my-view2');
+      await import('../components/my-view2');
       break;
     case 'view3':
-      // await import('~/components/my-view3');
+      // TODO: discover what is the cyclic dependency that makes everything crash when uncommenting next line
+      // await import('../components/my-view3');
       break;
     default:
       await import('../components/my-view404');

@@ -9,9 +9,7 @@
     "start": "yarn run serve",
     "serve": "webpack-serve --config webpack/dev.config.js",
     "build": "webpack --config webpack/prod.config.js",
-    "check": "gts check",
-    "clean": "gts clean",
-    "fix": "gts fix",
+    "lint": "tslint -p . --fix",
     "posttest": "yarn run check"
   },
   "dependencies": {
