@@ -47,7 +47,7 @@
     "script-ext-html-webpack-plugin": "^2.0.1",
     "sinon": "^5.0.10",
     "thread-loader": "^1.1.5",
-    "to-lit-html-loader": "^0.0.2",
+    "to-lit-html-loader": "^0.0.4",
     "ts-loader": "^4.3.0",
     "tslint": "^5.10.0",
     "typescript": "^2.8.3",

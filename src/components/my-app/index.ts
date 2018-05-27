@@ -19,7 +19,7 @@ class MyApp extends connect(store)(LitElement) {
   _render({ appTitle, _page, _drawerOpened, _snackbarOpened, _offline }) {
     // Anything that's related to rendering should be done in here.
     return html`
-    <style>${styles}</style>
+    ${styles}
 
     <!-- Header -->
     <app-header condenses reveals effects="waterfall">
