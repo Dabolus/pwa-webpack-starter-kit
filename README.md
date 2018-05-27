@@ -9,7 +9,8 @@
   <a href="https://codeclimate.com/github/Dabolus/pwa-webpack-starter-kit/maintainability"><img src="https://api.codeclimate.com/v1/badges/33ee72825bfdd80bcd17/maintainability" alt="Maintainability"></a>
 </p>
 
-### Differences with the original [PWA Starter Kit](https://github.com/Polymer/pwa-starter-kit/)
+### Differences with the original [PWA Starter Kit](https://github.com/Polymer/pwa-starter-kit/)
+
 - [Polymer CLI](https://github.com/Polymer/tools/tree/master/packages/cli) → [Webpack](https://webpack.js.org/)
 - ES8 → [TypeScript](https://www.typescriptlang.org/)
 - CSS → [SCSS](https://sass-lang.com/)
