@@ -21,7 +21,7 @@ module.exports = smartMerge({
   },
   plugins: [
     new ForkTsCheckerPlugin({
-      tslint: false, // avoid real time linting; we will be linting when building the project for production
+      tslint: undefined, // avoid real time linting; we will be linting when building the project for production
       watch: 'src',
       workers: Math.min(maxCPUs - 1, Math.ceil(maxCPUs / 2)),
       memoryLimit: maxRAM,
