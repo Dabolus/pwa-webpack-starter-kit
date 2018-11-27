@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My app</title>
+    <meta name="generator" content="PWA Webpack Starter Kit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My App description">
+
+    <base href="<%= htmlWebpackPlugin.options.buildName ? `/${htmlWebpackPlugin.options.buildName}/` : '/' %>">
+
+    <%- include fragments/icons -%>
+    <%- include fragments/critical-css -%>
+    <%- include fragments/critical-js -%>
+  </head>
+  <body>
+    <my-app appTitle="my app"></my-app>
+    <noscript>
+      Please enable JavaScript to view this website.
+    </noscript>
+    <!-- Built with love using PWA Webpack Starter Kit -->
+  </body>
+</html>

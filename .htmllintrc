@@ -1,0 +1,7 @@
+{
+  "raw-ignore-regex": "([ ]*<%[^]*?%>|<%%|\\<script.*?\\>\\<\/script\\>|\\<script.*?\\>[\\w\\W]+?\\<\/script\\>)",
+  "tag-bans": false,
+  "attr-name-style": false,
+  "attr-req-value": false,
+  "indent-width": 2
+}

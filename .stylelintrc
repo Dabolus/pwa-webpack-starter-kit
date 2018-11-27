@@ -1,0 +1,36 @@
+{
+  "extends": "stylelint-config-recommended",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "string-quotes": "single",
+    "unit-whitelist": [
+      "em",
+      "rem",
+      "s",
+      "%",
+      "deg"
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": [
+          "custom-elements"
+        ]
+      }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "function",
+          "if",
+          "else",
+          "for",
+          "return"
+        ]
+      }
+    ]
+  }
+}

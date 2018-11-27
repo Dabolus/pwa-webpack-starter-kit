@@ -1,3 +1,5 @@
+/* global workbox */
+
 // Write your own Service Worker related code here. You don't need to implement
 // caching strategies, as Workbox will auto-inject that part when you build your
 // project. This is the perfect place to implement other great SW features.
@@ -10,6 +12,6 @@ workbox.skipWaiting();
 workbox.clientsClaim();
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest);
-workbox.routing.registerRoute(/\/scripts\/wc\/.*(?!loader).*\.js$/, workbox.strategies.staleWhileRevalidate(), 'GET');
+workbox.routing.registerNavigationRoute('index.html');
 // Uncomment next line to enable offline Google Analytics
 // workbox.googleAnalytics.initialize();
