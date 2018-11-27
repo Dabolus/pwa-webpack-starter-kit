@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "rootDir": ".",
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -13,11 +14,18 @@
       "dom",
       "esnext"
     ],
-    "target": "es6"
+    "target": "es5",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "paths": {
+      "@components/*": ["components/*"],
+      "@actions/*": ["actions/*"],
+      "@reducers/*": ["reducers/*"],
+      "@store": ["store"]
+    }
   },
   "include": [
     "typings/**/*.d.ts",
-    "webpack/**/*.ts",
     "src/**/*.ts",
     "test/**/*.ts"
   ]

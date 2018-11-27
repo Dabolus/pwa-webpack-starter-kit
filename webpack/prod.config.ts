@@ -6,7 +6,6 @@
 import { resolve } from 'path';
 import { minify } from 'terser';
 import TerserPlugin from 'terser-webpack-plugin';
-import { loader as miniCssExtractLoader } from 'mini-css-extract-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import HtmlPlugin from 'html-webpack-plugin';
 import CleanPlugin from 'clean-webpack-plugin';
@@ -35,38 +34,6 @@ const config: webpack.Configuration = smartMerge({
         extractComments: true,
       }),
       new OptimizeCssAssetsPlugin(),
-    ],
-  },
-  module: {
-    rules: [
-      {
-        test: /styles\/.*\.s?[ac]ss$/,
-        use: [
-          miniCssExtractLoader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('postcss-preset-env')(),
-                require('autoprefixer')(),
-              ],
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: ['./node_modules'],
-            },
-          },
-        ],
-      },
     ],
   },
   plugins: [

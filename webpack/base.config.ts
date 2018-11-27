@@ -6,7 +6,6 @@
 import { resolve } from 'path';
 import webpack from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ScriptExtHtmlPlugin from 'script-ext-html-webpack-plugin';
 import { InjectManifest as InjectManifestPlugin } from 'workbox-webpack-plugin';
 
@@ -17,18 +16,21 @@ const config: webpack.Configuration = {
     app: './src/index',
   },
   output: {
-    filename: 'scripts/[name].js',
-    chunkFilename: 'scripts/[id].js',
+    filename: 'components/[name].js',
+    chunkFilename: 'components/[id].js',
     path: resolve(__dirname, '../build', process.env.BUILD_NAME || ''),
     pathinfo: false,
     crossOriginLoading: 'anonymous',
     globalObject: 'self',
   },
   resolve: {
-    extensions: ['.ts', '.js', '.scss', '.css', '.ejs'],
     alias: {
-      '~': './src',
+      '@components': resolve(__dirname, '../src/components/'),
+      '@actions': resolve(__dirname, '../src/actions/'),
+      '@reducers': resolve(__dirname, '../src/reducers/'),
+      '@store$': resolve(__dirname, '../src/store'),
     },
+    extensions: ['.ts', '.js', '.scss', '.css', '.ejs'],
     modules: ['./src', 'node_modules'],
   },
   module: {
@@ -43,6 +45,9 @@ const config: webpack.Configuration = {
               ['@babel/env', {
                 loose: true,
                 useBuiltIns: 'usage',
+                ...process.env.NODE_ENV === 'test' ? {} : {
+                  modules: false,
+                },
               }],
               '@babel/typescript',
             ],
@@ -51,9 +56,46 @@ const config: webpack.Configuration = {
                 corejs: 2,
                 sourceType: 'unambiguous',
               }],
+              ['@babel/proposal-decorators', {
+                legacy: true,
+              }],
+              ['@babel/proposal-class-properties', {
+                loose: true,
+              }],
+              '@babel/syntax-dynamic-import',
             ],
           },
         },
+      },
+      {
+        test: /\/.*\.s?[ac]ss$/,
+        use: [
+          {
+            loader: 'to-lit-html-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-preset-env')(),
+                require('autoprefixer')(),
+              ],
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['./node_modules'],
+            },
+          },
+        ],
       },
     ],
   },
@@ -65,10 +107,6 @@ const config: webpack.Configuration = {
         to: '.',
       },
     ]),
-    new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
-      chunkFilename: 'styles/[id].css',
-    }),
     new ScriptExtHtmlPlugin({
       defaultAttribute: 'defer',
     }),

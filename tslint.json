@@ -19,6 +19,7 @@
       ["Number", "Use 'number' instead."],
       ["Boolean", "Use 'boolean' instead."]
     ],
-    "interface-name": [true, "never-prefix"]
+    "interface-name": [true, "never-prefix"],
+    "variable-name": [true, "allow-leading-underscore"]
   }
 }

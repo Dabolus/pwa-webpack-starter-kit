@@ -15,40 +15,6 @@ const config: webpack.Configuration = smartMerge({
     removeEmptyChunks: false,
     splitChunks: false,
   },
-  module: {
-    rules: [
-      {
-        test: /styles\/.*\.s?[ac]ss$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('postcss-preset-env')(),
-                require('autoprefixer')(),
-              ],
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: ['./node_modules'],
-            },
-          },
-        ],
-      },
-    ],
-  },
   plugins: [
     new HtmlPlugin({
       inject: 'head',
