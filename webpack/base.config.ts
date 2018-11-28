@@ -37,7 +37,7 @@ const config: webpack.Configuration = {
     rules: [
       {
         test: /\.[tj]s$/,
-        exclude: /node_modules\/(?!(pwa-helpers)\/).*/,
+        exclude: /node_modules\/(?!(pwa-helpers|@polymer)\/).*/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -52,6 +52,19 @@ const config: webpack.Configuration = {
               '@babel/typescript',
             ],
             plugins: [
+              ['template-html-minifier', {
+                modules: {
+                  'lit-html': ['html', 'svg'], // lit-html
+                  '@polymer/lit-element': ['html', 'svg'], // LitElement
+                  '@polymer/polymer/polymer-element': ['html'], // Polymer 3 - exported from Polymer Element
+                  '@polymer/polymer/lib/utils/html-tag.js': ['html'], // Polymer 3 - exported from utils (used by PolymerElements family)
+                },
+                htmlMinifier: {
+                  collapseWhitespace: true,
+                  removeComments: true,
+                  minifyCSS: true,
+                },
+              }],
               ['@babel/transform-runtime', {
                 corejs: 2,
                 sourceType: 'unambiguous',
