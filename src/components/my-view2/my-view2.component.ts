@@ -12,9 +12,6 @@ import { decrement, increment } from '@actions/counter';
 import counter from '@reducers/counter';
 store.addReducers({ counter });
 
-// These are the elements needed by this element.
-import '@components/counter-element/counter-element.component';
-
 import template from './my-view2.template';
 
 export class MyView2 extends connect(store)(PageViewElement) {

@@ -3,6 +3,9 @@ import { MyView2 } from './my-view2.component';
 
 import styles from './my-view2.styles';
 
+// These are the elements needed by this element.
+import '@components/counter-element/counter-element.component';
+
 // These are the shared styles needed by this element.
 import sharedStyles from '@components/shared.styles';
 

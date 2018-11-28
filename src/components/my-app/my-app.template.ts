@@ -3,6 +3,13 @@ import { html } from '@polymer/lit-element';
 import { MyApp } from './my-app.component';
 import styles from './my-app.styles';
 
+// These are the elements needed by this element.
+import '@components/snack-bar/snack-bar.component';
+import '@polymer/app-layout/app-drawer/app-drawer';
+import '@polymer/app-layout/app-header/app-header';
+import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
+import '@polymer/app-layout/app-toolbar/app-toolbar';
+
 export default function template(this: MyApp) {
   return html`
     ${styles}

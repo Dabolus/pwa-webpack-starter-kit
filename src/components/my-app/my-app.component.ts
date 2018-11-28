@@ -1,3 +1,4 @@
+import { property } from '@components/helpers';
 import { LitElement, PropertyValues } from '@polymer/lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 import { connect } from 'pwa-helpers/connect-mixin';
@@ -19,14 +20,6 @@ import {
 // The following line imports the type only - it will be removed by tsc so
 // another import for app-drawer.js is required below.
 import { AppDrawerElement } from '@polymer/app-layout/app-drawer/app-drawer';
-
-// These are the elements needed by this element.
-import { property } from '@components/helpers';
-import '@components/snack-bar/snack-bar.component';
-import '@polymer/app-layout/app-drawer/app-drawer';
-import '@polymer/app-layout/app-header/app-header';
-import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
-import '@polymer/app-layout/app-toolbar/app-toolbar';
 
 import template from './my-app.template';
 
