@@ -53,9 +53,9 @@ const loadPage: ActionCreator<ThunkResult> = (page: string) => (dispatch) => {
     case 'view3':
       import('@components/my-view3/my-view3.component');
       break;
-    /* default:
+    default:
       page = 'view404';
-      import('@components/my-view404/my-view404.component'); */
+      import('@components/my-view404/my-view404.component');
   }
 
   dispatch(updatePage(page));
