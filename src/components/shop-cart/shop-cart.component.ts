@@ -1,4 +1,5 @@
-import { LitElement, property } from '@polymer/lit-element';
+import { property } from '@components/helpers';
+import { LitElement } from '@polymer/lit-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 
 // This element is connected to the Redux store.
