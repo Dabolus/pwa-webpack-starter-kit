@@ -18,21 +18,22 @@ const needsTemplate = (() => {
     clone.content.firstChild.content.childNodes.length === 0);
 })();
 
-let polyfills = [];
-
-if (!('attachShadow' in Element.prototype && 'getRootNode' in Element.prototype) ||
-  ((window as any).ShadyDOM && (window as any).ShadyDOM.force)) {
-  polyfills.push('sd');
-}
-if (!window.customElements || (window.customElements as any).forcePolyfill) {
-  polyfills.push('ce');
-}
-
-// NOTE: any browser that does not have template or ES6 features
-// must load the full suite of polyfills.
-if (!Promise || !Array.from || !window.URL || !Symbol || needsTemplate) {
-  polyfills = ['sd-ce-pf'];
-}
+const polyfills = (() => {
+  // NOTE: any browser that does not have template or ES6 features
+  // must load the full suite of polyfills.
+  if (!Promise || !Array.from || !window.URL || !Symbol || needsTemplate) {
+    return ['sd-ce-pf'];
+  }
+  const neededPolyfills = [];
+  if (!('attachShadow' in Element.prototype && 'getRootNode' in Element.prototype) ||
+    ((window as any).ShadyDOM && (window as any).ShadyDOM.force)) {
+    neededPolyfills.push('sd');
+  }
+  if (!window.customElements || (window.customElements as any).forcePolyfill) {
+    neededPolyfills.push('ce');
+  }
+  return neededPolyfills;
+})();
 
 // Note that in this case we need to append the .js extension, otherwise
 // Webpack will try to load the .js.map files into the bundle too.
