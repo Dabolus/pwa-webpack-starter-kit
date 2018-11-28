@@ -14,14 +14,14 @@
   transition-property: visibility, transform;
   transition-duration: 0.2s;
   visibility: hidden;
-}
-:host([active]) {
-  visibility: visible;
-  transform: translate3d(0, 0, 0);
-}
-@media (min-width: 460px) {
-  :host {
+
+  @media (min-width: 460px) {
     width: 320px;
     margin: auto;
   }
+}
+
+:host([active]) {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
 }

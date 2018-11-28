@@ -45,19 +45,19 @@ app-header {
 
 .toolbar-list {
   display: none;
-}
 
-.toolbar-list > a {
-  display: inline-block;
-  color: var(--app-header-text-color);
-  text-decoration: none;
-  line-height: 30px;
-  padding: 4px 24px;
-}
+  > a {
+    display: inline-block;
+    color: var(--app-header-text-color);
+    text-decoration: none;
+    line-height: 30px;
+    padding: 4px 24px;
 
-.toolbar-list > a[selected] {
-  color: var(--app-header-selected-color);
-  border-bottom: 4px solid var(--app-header-selected-color);
+    &[selected] {
+      color: var(--app-header-selected-color);
+      border-bottom: 4px solid var(--app-header-selected-color);
+    }
+  }
 }
 
 .menu-btn {
@@ -76,18 +76,18 @@ app-header {
   padding: 24px;
   background: var(--app-drawer-background-color);
   position: relative;
-}
 
-.drawer-list > a {
-  display: block;
-  text-decoration: none;
-  color: var(--app-drawer-text-color);
-  line-height: 40px;
-  padding: 0 24px;
-}
+  > a {
+    display: block;
+    text-decoration: none;
+    color: var(--app-drawer-text-color);
+    line-height: 40px;
+    padding: 0 24px;
 
-.drawer-list > a[selected] {
-  color: var(--app-drawer-selected-color);
+    &[selected] {
+      color: var(--app-drawer-selected-color);
+    }
+  }
 }
 
 /* Workaround for IE11 displaying <main> as inline */
@@ -102,10 +102,10 @@ main {
 
 .page {
   display: none;
-}
 
-.page[active] {
-  display: block;
+  &[active] {
+    display: block;
+  }
 }
 
 footer {
