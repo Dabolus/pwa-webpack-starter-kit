@@ -15,12 +15,12 @@ import {
 } from 'redux';
 import thunk, { ThunkMiddleware } from 'redux-thunk';
 
-import { AppAction } from './actions/app';
-import { CounterAction } from './actions/counter';
-import { ShopAction } from './actions/shop';
-import app, { AppState } from './reducers/app';
-import { CounterState } from './reducers/counter';
-import { ShopState } from './reducers/shop';
+import { AppAction } from '@actions/app';
+import { CounterAction } from '@actions/counter';
+import { ShopAction } from '@actions/shop';
+import app, { AppState } from '@reducers/app';
+import { CounterState } from '@reducers/counter';
+import { ShopState } from '@reducers/shop';
 
 // Overall state extends static states and partials lazy states.
 export interface RootState {
