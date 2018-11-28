@@ -70,7 +70,7 @@ const config: webpack.Configuration = {
                 sourceType: 'unambiguous',
               }],
               ['@babel/proposal-decorators', {
-                legacy: true,
+                decoratorsBeforeExport: true,
               }],
               ['@babel/proposal-class-properties', {
                 loose: true,

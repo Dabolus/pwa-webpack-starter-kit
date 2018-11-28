@@ -1,4 +1,5 @@
-import { LitElement, property } from '@polymer/lit-element';
+import { LitElement } from '@polymer/lit-element';
+import { property } from './helpers';
 
 export class PageViewElement extends LitElement {
   @property({type: Boolean})

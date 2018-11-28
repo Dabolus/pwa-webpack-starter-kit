@@ -1,4 +1,5 @@
-import { LitElement, property } from '@polymer/lit-element';
+import { property } from '@components/helpers';
+import { LitElement } from '@polymer/lit-element';
 
 import template from './snack-bar.template';
 

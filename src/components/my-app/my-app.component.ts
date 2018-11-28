@@ -1,4 +1,4 @@
-import { LitElement, property, PropertyValues } from '@polymer/lit-element';
+import { LitElement, PropertyValues } from '@polymer/lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
@@ -21,6 +21,7 @@ import {
 import { AppDrawerElement } from '@polymer/app-layout/app-drawer/app-drawer';
 
 // These are the elements needed by this element.
+import { property } from '@components/helpers';
 import '@components/snack-bar/snack-bar.component';
 import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-header/app-header';
