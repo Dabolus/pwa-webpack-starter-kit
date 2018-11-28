@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "gulp": "gulp -f gulp/config.ts --cwd .",
-    "start": "webpack-dev-server --config webpack/dev.config.ts --hot --color --compress --overlay --history-api-fallback --open",
+    "start": "BROWSERSLIST=\"edge > 12\" webpack-dev-server --config webpack/dev.config.ts --hot --color --compress --overlay --history-api-fallback --open",
     "build:static": "webpack --config webpack/prod.config.ts",
     "build": "npm run gulp build",
     "serve": "prpl-server --root build/ --host 0.0.0.0 --https-redirect --bot-proxy https://render-tron.appspot.com/render",
