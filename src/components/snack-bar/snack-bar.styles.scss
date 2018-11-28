@@ -4,10 +4,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 12px;
+  padding: .75rem;
   background-color: var(--app-secondary-color);
   color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 .625rem rgba(0, 0, 0, 0.2);
   text-align: center;
   will-change: transform;
   transform: translate3d(0, 100%, 0);
@@ -15,8 +15,8 @@
   transition-duration: 0.2s;
   visibility: hidden;
 
-  @media (min-width: 460px) {
-    width: 320px;
+  @media (min-width: 28.75em) {
+    width: 20rem;
     margin: auto;
   }
 }
