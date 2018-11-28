@@ -59,8 +59,9 @@ export class MyApp extends connect(store)(LitElement) {
     this._snackbarOpened = state.app!.snackbarOpened;
     this._drawerOpened = state.app!.drawerOpened;
   }
+
   protected render() {
-    return template.bind(this);
+    return template.call(this);
   }
 
   protected firstUpdated() {
