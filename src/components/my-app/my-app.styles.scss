@@ -1,3 +1,6 @@
+// This shall only be the only place where px units are permitted
+/* stylelint-disable unit-whitelist */
+
 :host {
   --app-drawer-width: 256px;
   display: block;
@@ -34,7 +37,7 @@ app-header {
 }
 
 [main-title] {
-  font-family: 'Pacifico';
+  font-family: 'Pacifico', serif;
   text-transform: lowercase;
   font-size: 30px;
   /* In the narrow layout, the toolbar is offset by the width of the

@@ -31,6 +31,7 @@
           "return"
         ]
       }
-    ]
+    ],
+    "no-empty-source": null
   }
 }
