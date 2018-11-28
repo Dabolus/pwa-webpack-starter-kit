@@ -1,20 +1,20 @@
 /* tslint:disable:no-implicit-dependencies object-literal-sort-keys */
 import { exec } from 'child_process';
 
-interface IPRPLConfigBuild {
+interface PRPLConfigBuild {
   name: string;
   browserCapabilities?: string[];
 }
 
-interface IPRPLConfig {
+interface PRPLConfig {
   entrypoint: string;
-  builds: IPRPLConfigBuild[];
+  builds: PRPLConfigBuild[];
 }
 
 export class ConfigHelper {
-  private readonly config: IPRPLConfig;
+  private readonly config: PRPLConfig;
 
-  constructor(entrypoint = 'index.html', builds: IPRPLConfigBuild[] = []) {
+  constructor(entrypoint = 'index.html', builds: PRPLConfigBuild[] = []) {
     this.config = { entrypoint, builds };
   }
 
