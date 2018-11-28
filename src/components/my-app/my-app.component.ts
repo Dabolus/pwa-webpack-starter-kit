@@ -21,11 +21,11 @@ import {
 import { AppDrawerElement } from '@polymer/app-layout/app-drawer/app-drawer';
 
 // These are the elements needed by this element.
+import '@components/snack-bar/snack-bar.component';
 import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
-import './snack-bar';
 
 import template from './my-app.template';
 
