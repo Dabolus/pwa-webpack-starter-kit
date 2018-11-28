@@ -41,13 +41,13 @@ export const navigate: ActionCreator<ThunkResult> = (path: string) => (dispatch)
 
 const loadPage: ActionCreator<ThunkResult> = (page: string) => (dispatch) => {
   switch (page) {
-    /* case 'view1':
+    case 'view1':
       import('@components/my-view1/my-view1.component').then(() => {
         // Put code in here that you want to run every time when
         // navigating to view1 after my-view1.js is loaded.
       });
       break;
-    case 'view2':
+    /* case 'view2':
       import('@components/my-view2/my-view2.component');
       break;
     case 'view3':
