@@ -7,10 +7,11 @@
 </p>
 
 ### Differences with the original [PWA Starter Kit](https://github.com/Polymer/pwa-starter-kit/)
-- [Polymer CLI](https://github.com/Polymer/tools/tree/master/packages/cli) → [Gulp](https://gulpjs.com/) + [Webpack](https://webpack.js.org/)
+- [Gulp](https://gulpjs.com/) + [Polymer CLI](https://github.com/Polymer/tools/tree/master/packages/cli) → [Gulp](https://gulpjs.com/) + [Webpack](https://webpack.js.org/)
 - Modern JavaScript → [TypeScript](https://www.typescriptlang.org/)
 - CSS → [SCSS](https://sass-lang.com/)
-- All-in-a-file components → Components logic and template separated from its styles
+- HTML → [EJS](https://ejs.co/) (only on raw HTML files, templates are still HTML)
+- All-in-a-file components → Components split into component class, template and styles
 - Automatic SW with [sw-precache](https://github.com/GoogleChromeLabs/sw-precache) → Custom SW with [Workbox](https://github.com/GoogleChrome/workbox) auto injected
 - Build targets: ES5, ES6, ESM → ES5, ES6 and possibly others _(but currently **no** ESM, as Webpack has its own way to handle dynamic imports)_
 
