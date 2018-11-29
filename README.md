@@ -27,6 +27,26 @@
   yarn install
   ```
 
+## Adding more build targets
+To configure Babel and PostCSS you have to specify **a list of browsers** that your app 
+will support by being transpiled and polyfilled (via the 
+[browserslist library](https://github.com/browserslist/browserslist)), while PRPL 
+Server works by passing it **a set of browser capabilities** (via the 
+[browser-capabilities library](https://github.com/Polymer/tools/tree/master/packages/browser-capabilities)). 
+This means that to add new build targets you will have to check out what browsers 
+support your target capabilities. To do so, you might find useful 
+[this compatibility table](https://kangax.github.io/compat-table/es2016plus).
+
+After finding out the correct browserslist configuration, adding a new build target is 
+quite simple; you just need to tweak your Gulp configuration a bit. Here are the steps you should follow:
+1. Open the main gulp config file (`gulp/config.ts`)
+2. Copy-paste one of the `build:xx` tasks and replace its parameters respectively with 
+   your new build name, the `browserslist` the new build will be built for and their 
+   capabilities
+3. Add your new `build:xx` task to the main `build` task, together with the other 
+   builds that are run in parallel
+4. Done!
+
 ### Contributing
 **PRs are welcome!**
 You noticed a bug, a possible improvement or whatever?
