@@ -3,4 +3,5 @@ module.exports = {
     command: 'yarn start',
     port: 8080,
   },
+  browserContext: 'incognito',
 };
