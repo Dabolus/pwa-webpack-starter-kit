@@ -11,7 +11,9 @@
     "build:static": "webpack --config webpack/prod.config.ts",
     "build": "npm run gulp build",
     "serve": "prpl-server --root build/ --host 0.0.0.0 --https-redirect --bot-proxy https://render-tron.appspot.com/render",
-    "lint": "npm run gulp lint"
+    "lint": "npm run gulp lint",
+    "test": "NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/base.config.js",
+    "test:integration": "NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/integration.config.js"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.1.5",
@@ -35,12 +37,17 @@
     "@piuccio/ejs-compiled-loader": "^3.0.0",
     "@types/clean-webpack-plugin": "^0.1.2",
     "@types/copy-webpack-plugin": "^4.4.2",
+    "@types/expect-puppeteer": "^3.3.0",
     "@types/gulp": "^4.0.5",
     "@types/html-webpack-plugin": "^3.2.0",
+    "@types/jest": "^23.3.10",
+    "@types/jest-environment-puppeteer": "^2.2.1",
     "@types/node": "^10.12.10",
     "@types/optimize-css-assets-webpack-plugin": "^1.3.3",
+    "@types/puppeteer": "^1.10.1",
     "@types/webpack": "^4.4.19",
     "@types/webpack-merge": "^4.1.3",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-template-html-minifier": "^2.1.2",
     "clean-webpack-plugin": "^1.0.0",
@@ -53,10 +60,13 @@
     "gulp-tslint": "^8.1.3",
     "html-webpack-plugin": "^4.0.0-beta.4",
     "htmllint": "^0.7.2",
+    "jest": "^23.6.0",
+    "jest-puppeteer": "^3.5.2",
     "node-sass": "^4.10.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.4.0",
+    "puppeteer": "^1.10.0",
     "sass-loader": "^7.1.0",
     "script-ext-html-webpack-plugin": "^2.1.3",
     "stylelint": "^9.8.0",
@@ -73,6 +83,9 @@
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4",
     "workbox-webpack-plugin": "^3.6.3"
+  },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
   },
   "engines": {
     "node": ">=8.3"
