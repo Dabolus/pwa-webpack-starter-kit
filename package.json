@@ -13,7 +13,8 @@
     "serve": "prpl-server --root build/ --host 0.0.0.0 --https-redirect --bot-proxy https://render-tron.appspot.com/render",
     "lint": "npm run gulp lint",
     "test": "NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/base.config.js",
-    "test:integration": "NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/integration.config.js"
+    "test:integration": "NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/integration.config.js",
+    "test:unit": "NODE_ENV=test jest -c jest/unit.config.js"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.1.5",
@@ -35,6 +36,7 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-typescript": "^7.1.0",
     "@piuccio/ejs-compiled-loader": "^3.0.0",
+    "@skatejs/ssr": "^0.19.9",
     "@types/clean-webpack-plugin": "^0.1.2",
     "@types/copy-webpack-plugin": "^4.4.2",
     "@types/expect-puppeteer": "^3.3.0",
