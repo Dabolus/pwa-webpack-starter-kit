@@ -8,10 +8,10 @@ import template from './counter-element.template';
 // got from someone else.
 export class CounterElement extends LitElement {
   @property({type: Number})
-  protected clicks = 0;
+  public clicks = 0;
 
   @property({type: Number})
-  protected value = 0;
+  public value = 0;
 
   protected render() {
     return template.call(this);
