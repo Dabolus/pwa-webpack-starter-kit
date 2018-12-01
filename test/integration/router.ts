@@ -75,7 +75,7 @@ async function testNavigationInADifferentWay(page: Page, href: string, linkText:
   const text = await page.evaluate((el) => el.textContent, linkHandle);
   expect(text).toBe(linkText);
 
-  await linkHandle.asElement().click();
+  await page.evaluate((el) => el.click(), linkHandle);
   const newUrl = await page.evaluate('window.location.href');
   expect(newUrl).toBe(`${appUrl}/${href}`);
 }
