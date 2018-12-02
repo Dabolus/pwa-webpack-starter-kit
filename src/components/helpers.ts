@@ -19,3 +19,15 @@ export function property(options?: PropertyDeclaration<any>):
     };
   };
 }
+
+// A customElement decorator that works with Babel.
+export function customElement(tagName: keyof HTMLElementTagNameMap):
+  (proto: any) => void {
+  return (elementDescriptor) => ({
+    elements: elementDescriptor.elements,
+    kind: elementDescriptor.kind,
+    finisher(clazz: typeof LitElement) {
+      window.customElements.define(tagName, clazz);
+    },
+  });
+}
