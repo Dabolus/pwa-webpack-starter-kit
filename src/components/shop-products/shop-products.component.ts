@@ -1,4 +1,4 @@
-import { property } from '@components/helpers';
+import { customElement, property } from '@components/helpers';
 import { LitElement } from '@polymer/lit-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 
@@ -13,6 +13,7 @@ import { ProductsState } from '@reducers/shop';
 
 import template from './shop-products.template';
 
+@customElement('shop-products')
 export class ShopProducts extends connect(store)(LitElement) {
   @property({type: Object})
   protected _products: ProductsState = {};
@@ -35,4 +36,8 @@ export class ShopProducts extends connect(store)(LitElement) {
   }
 }
 
-window.customElements.define('shop-products', ShopProducts);
+declare global {
+  interface HTMLElementTagNameMap {
+    'shop-products': ShopProducts;
+  }
+}

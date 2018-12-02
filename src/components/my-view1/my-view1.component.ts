@@ -1,11 +1,17 @@
+import { customElement } from '@components/helpers';
 import { PageViewElement } from '@components/page-view-element';
 
 import template from './my-view1.template';
 
+@customElement('my-view1')
 export class MyView1 extends PageViewElement {
   protected render() {
     return template.call(this);
   }
 }
 
-window.customElements.define('my-view1', MyView1);
+declare global {
+  interface HTMLElementTagNameMap {
+    'my-view1': MyView1;
+  }
+}

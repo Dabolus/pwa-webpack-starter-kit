@@ -1,4 +1,4 @@
-import { property } from '@components/helpers';
+import { customElement, property } from '@components/helpers';
 import { LitElement } from '@polymer/lit-element';
 
 import template from './counter-element.template';
@@ -6,6 +6,7 @@ import template from './counter-element.template';
 // This is a reusable element. It is not connected to the store. You can
 // imagine that it could just as well be a third-party element that you
 // got from someone else.
+@customElement('counter-element')
 export class CounterElement extends LitElement {
   @property({type: Number})
   public clicks = 0;
@@ -30,4 +31,8 @@ export class CounterElement extends LitElement {
   }
 }
 
-window.customElements.define('counter-element', CounterElement);
+declare global {
+  interface HTMLElementTagNameMap {
+    'counter-element': CounterElement;
+  }
+}

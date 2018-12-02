@@ -1,4 +1,4 @@
-import { property } from '@components/helpers';
+import { customElement, property } from '@components/helpers';
 import { PageViewElement } from '@components/page-view-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 
@@ -14,6 +14,7 @@ store.addReducers({ counter });
 
 import template from './my-view2.template';
 
+@customElement('my-view2')
 export class MyView2 extends connect(store)(PageViewElement) {
   @property({type: Number})
   protected _clicks = 0;
@@ -40,4 +41,8 @@ export class MyView2 extends connect(store)(PageViewElement) {
   }
 }
 
-window.customElements.define('my-view2', MyView2);
+declare global {
+  interface HTMLElementTagNameMap {
+    'my-view2': MyView2;
+  }
+}

@@ -1,9 +1,10 @@
-import { property } from '@components/helpers';
+import { customElement, property } from '@components/helpers';
 import { LitElement } from '@polymer/lit-element';
 
 import template from './shop-item.template';
 
 // This element is *not* connected to the Redux store.
+@customElement('shop-item')
 export class ShopItem extends LitElement {
   @property({type: String})
   protected name = '';
@@ -19,4 +20,8 @@ export class ShopItem extends LitElement {
   }
 }
 
-window.customElements.define('shop-item', ShopItem);
+declare global {
+  interface HTMLElementTagNameMap {
+    'shop-item': ShopItem;
+  }
+}

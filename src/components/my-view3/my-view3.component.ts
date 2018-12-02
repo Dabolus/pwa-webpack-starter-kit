@@ -1,4 +1,4 @@
-import { property } from '@components/helpers';
+import { customElement, property } from '@components/helpers';
 import { PageViewElement } from '@components/page-view-element';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 
@@ -14,6 +14,7 @@ store.addReducers({ shop });
 
 import template from './my-view3.template';
 
+@customElement('my-view3')
 export class MyView3 extends connect(store)(PageViewElement) {
   @property({type: Number})
   protected _quantity = 0;
@@ -36,4 +37,8 @@ export class MyView3 extends connect(store)(PageViewElement) {
   }
 }
 
-window.customElements.define('my-view3', MyView3);
+declare global {
+  interface HTMLElementTagNameMap {
+    'my-view3': MyView3;
+  }
+}

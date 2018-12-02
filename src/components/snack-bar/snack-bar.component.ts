@@ -1,8 +1,9 @@
-import { property } from '@components/helpers';
+import { customElement, property } from '@components/helpers';
 import { LitElement } from '@polymer/lit-element';
 
 import template from './snack-bar.template';
 
+@customElement('snack-bar')
 export class SnackBar extends LitElement {
   @property({type: Boolean})
   protected active = false;
@@ -12,4 +13,8 @@ export class SnackBar extends LitElement {
   }
 }
 
-window.customElements.define('snack-bar', SnackBar);
+declare global {
+  interface HTMLElementTagNameMap {
+    'snack-bar': SnackBar;
+  }
+}

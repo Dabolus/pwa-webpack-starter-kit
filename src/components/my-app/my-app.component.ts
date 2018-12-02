@@ -1,4 +1,4 @@
-import { property } from '@components/helpers';
+import { customElement, property } from '@components/helpers';
 import { LitElement, PropertyValues } from '@polymer/lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 import { connect } from 'pwa-helpers/connect-mixin';
@@ -23,6 +23,7 @@ import { AppDrawerElement } from '@polymer/app-layout/app-drawer/app-drawer';
 
 import template from './my-app.template';
 
+@customElement('my-app')
 export class MyApp extends connect(store)(LitElement) {
 
   @property({type: String})
@@ -85,4 +86,8 @@ export class MyApp extends connect(store)(LitElement) {
   }
 }
 
-window.customElements.define('my-app', MyApp);
+declare global {
+  interface HTMLElementTagNameMap {
+    'my-app': MyApp;
+  }
+}

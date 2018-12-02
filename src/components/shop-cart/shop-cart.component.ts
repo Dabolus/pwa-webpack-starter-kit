@@ -1,4 +1,4 @@
-import { property } from '@components/helpers';
+import { customElement, property } from '@components/helpers';
 import { LitElement } from '@polymer/lit-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 
@@ -14,6 +14,7 @@ import { CartItem } from '@reducers/shop';
 
 import template from './shop-cart.template';
 
+@customElement('shop-cart')
 export class ShopCart extends connect(store)(LitElement) {
   @property({type: Array})
   protected _items: CartItem[] = [];
@@ -36,4 +37,8 @@ export class ShopCart extends connect(store)(LitElement) {
   }
 }
 
-window.customElements.define('shop-cart', ShopCart);
+declare global {
+  interface HTMLElementTagNameMap {
+    'shop-cart': ShopCart;
+  }
+}
