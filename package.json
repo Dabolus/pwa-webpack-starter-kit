@@ -7,14 +7,14 @@
   "private": true,
   "scripts": {
     "gulp": "gulp -f gulp/config.ts --cwd .",
-    "start": "BROWSERSLIST=\"edge > 12\" webpack-dev-server --config webpack/dev.config.ts --hot --color --compress --overlay --history-api-fallback --open",
+    "start": "cross-env BROWSERSLIST=\"edge > 12\" webpack-dev-server --config webpack/dev.config.ts --hot --color --compress --overlay --history-api-fallback --open",
     "build:static": "webpack --config webpack/prod.config.ts",
     "build": "npm run gulp build",
     "serve": "prpl-server --root build/ --host 0.0.0.0 --https-redirect --bot-proxy https://render-tron.appspot.com/render",
     "lint": "npm run gulp lint",
-    "test": "NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/base.config.js",
-    "test:integration": "NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/integration.config.js",
-    "test:unit": "NODE_ENV=test jest -c jest/unit.config.js"
+    "test": "cross-env NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/base.config.js",
+    "test:integration": "cross-env NODE_ENV=test JEST_PUPPETEER_CONFIG=jest/puppeteer.config.js jest -c jest/integration.config.js",
+    "test:unit": "cross-env NODE_ENV=test jest -c jest/unit.config.js"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.2.0",
@@ -57,6 +57,7 @@
     "babel-plugin-template-html-minifier": "^2.1.2",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "ejs": "^2.6.1",
     "gulp": "^4.0.0",

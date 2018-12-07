@@ -20,7 +20,8 @@ export class ConfigHelper {
 
   public createBuild(buildName: string, browsersList: string, browserCapabilities?: string[]) {
     return new Promise((resolve, reject) =>
-      exec(`BUILD_NAME=${buildName} BROWSERSLIST="${browsersList}" npm run build:static`, (err) => {
+      // tslint:disable-next-line:max-line-length
+      exec(`npx cross-env BUILD_NAME=${buildName} BROWSERSLIST="${browsersList}" npm run build:static`, (err) => {
         if (err) {
           reject(err);
         } else {
