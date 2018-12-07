@@ -5,13 +5,18 @@
 // project. This is the perfect place to implement other great SW features.
 // (e.g. Web Push, etc...)
 
-// This part is needed by the webpack Workbox plugin to inject the precache manifest.
-// You can either leave it at the beginning of your SW, or move it where you prefer.
-// Just make sure you don't delete it, otherwise your PWA won't be cached on users' devices
-workbox.skipWaiting();
-workbox.clientsClaim();
-workbox.precaching.suppressWarnings();
-workbox.precaching.precacheAndRoute(self.__precacheManifest);
-workbox.routing.registerNavigationRoute('index.html');
+// Uncomment the next few lines to enable precaching with Workbox.
+// By default, this lines are commented out as you might not want to keep precaching
+// active while in dev mode. The reason why we still register the SW in dev mode is that
+// it allows to test other great SW features, such as push notifications or background sync.
+// When you think your app is ready for production, you can also uncomment the following lines
+// to test out the SW with Workbox in dev mode (automatically enabled when on localhost), so that
+// you can make sure that you're actually caching your PWA correctly.
+// workbox.skipWaiting();
+// workbox.clientsClaim();
+// workbox.precaching.suppressWarnings();
+// workbox.precaching.precacheAndRoute(self.__precacheManifest);
+// workbox.routing.registerNavigationRoute('index.html');
+
 // Uncomment next line to enable offline Google Analytics
 // workbox.googleAnalytics.initialize();
