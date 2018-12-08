@@ -46,7 +46,7 @@ const config: webpack.Configuration = {
         },
       },
       {
-        test: /\/.*\.s?[ac]ss$/,
+        test: /\.s?[ac]ss$/,
         use: [
           {
             loader: 'to-lit-html-loader',
