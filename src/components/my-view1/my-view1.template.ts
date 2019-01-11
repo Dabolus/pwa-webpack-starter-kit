@@ -1,16 +1,8 @@
 import { html } from 'lit-element';
 import { MyView1 } from './my-view1.component';
 
-import styles from './my-view1.styles';
-
-// These are the shared styles needed by this element.
-import sharedStyles from '@components/shared.styles';
-
 export default function template(this: MyView1) {
   return html`
-    ${sharedStyles}
-    ${styles}
-
     <section>
       <h2>Static page</h2>
       <p>This is a text-only page.</p>

@@ -20,10 +20,12 @@ import {
 // another import for app-drawer.js is required below.
 import { AppDrawerElement } from '@polymer/app-layout/app-drawer/app-drawer';
 
+import styles from './my-app.styles';
 import template from './my-app.template';
 
 @customElement('my-app')
 export class MyApp extends connect(store)(LitElement) {
+  public static styles = [styles];
 
   @property({type: String})
   public appTitle = '';

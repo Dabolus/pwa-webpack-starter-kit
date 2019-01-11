@@ -1,10 +1,13 @@
 import { customElement, LitElement, property } from 'lit-element';
 
+import styles from './shop-item.styles';
 import template from './shop-item.template';
 
 // This element is *not* connected to the Redux store.
 @customElement('shop-item')
 export class ShopItem extends LitElement {
+  public static styles = [styles];
+
   @property({type: String})
   protected name = '';
 

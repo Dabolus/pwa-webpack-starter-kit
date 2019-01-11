@@ -11,10 +11,16 @@ import { removeFromCart } from '@actions/shop';
 import { cartItemsSelector, cartTotalSelector } from '@reducers/shop';
 import { CartItem } from '@reducers/shop';
 
+import styles from './shop-cart.styles';
 import template from './shop-cart.template';
+
+// These are the shared styles needed by this element.
+import buttonsSharedStyles from '@components/buttons-shared.styles';
 
 @customElement('shop-cart')
 export class ShopCart extends connect(store)(LitElement) {
+  public static styles = [buttonsSharedStyles, styles];
+
   @property({type: Array})
   protected _items: CartItem[] = [];
 

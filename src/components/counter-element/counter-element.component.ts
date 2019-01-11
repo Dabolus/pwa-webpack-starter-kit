@@ -1,12 +1,18 @@
 import { customElement, LitElement, property } from 'lit-element';
 
+import styles from './counter-element.styles';
 import template from './counter-element.template';
+
+// These are the shared styles needed by this element.
+import buttonsSharedStyles from '@components/buttons-shared.styles';
 
 // This is a reusable element. It is not connected to the store. You can
 // imagine that it could just as well be a third-party element that you
 // got from someone else.
 @customElement('counter-element')
 export class CounterElement extends LitElement {
+  public static styles = [buttonsSharedStyles, styles];
+
   @property({type: Number})
   public clicks = 0;
 

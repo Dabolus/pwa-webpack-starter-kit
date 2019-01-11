@@ -12,10 +12,16 @@ import { decrement, increment } from '@actions/counter';
 import counter from '@reducers/counter';
 store.addReducers({ counter });
 
+import styles from './my-view2.styles';
 import template from './my-view2.template';
+
+// These are the shared styles needed by this element.
+import sharedStyles from '@components/shared.styles';
 
 @customElement('my-view2')
 export class MyView2 extends connect(store)(PageViewElement) {
+  public static styles = [sharedStyles, styles];
+
   @property({type: Number})
   protected _clicks = 0;
 

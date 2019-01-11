@@ -12,10 +12,17 @@ import { checkout } from '@actions/shop';
 import shop, { cartQuantitySelector } from '@reducers/shop';
 store.addReducers({ shop });
 
+import styles from './my-view3.styles';
 import template from './my-view3.template';
+
+// These are the shared styles needed by this element.
+import buttonsSharedStyles from '@components/buttons-shared.styles';
+import sharedStyles from '@components/shared.styles';
 
 @customElement('my-view3')
 export class MyView3 extends connect(store)(PageViewElement) {
+  public static styles = [sharedStyles, buttonsSharedStyles, styles];
+
   @property({type: Number})
   protected _quantity = 0;
 

@@ -1,19 +1,11 @@
 import { html } from 'lit-element';
 import { MyView2 } from './my-view2.component';
 
-import styles from './my-view2.styles';
-
 // These are the elements needed by this element.
 import '@components/counter-element/counter-element.component';
 
-// These are the shared styles needed by this element.
-import sharedStyles from '@components/shared.styles';
-
 export default function template(this: MyView2) {
   return html`
-    ${sharedStyles}
-    ${styles}
-
     <section>
       <h2>Redux example: simple counter</h2>
       <div class="circle">${this._value}</div>

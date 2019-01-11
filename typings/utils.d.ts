@@ -1,6 +1,6 @@
 declare module '*.styles' {
-  import { TemplateResult } from 'lit-html';
+  import { CSSResult } from 'lit-element';
 
-  const styles: TemplateResult;
+  const styles: CSSResult;
   export default styles;
 }

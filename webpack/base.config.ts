@@ -49,7 +49,7 @@ const config: webpack.Configuration = {
         test: /\.s?[ac]ss$/,
         use: [
           {
-            loader: 'to-lit-html-loader',
+            loader: resolve(__dirname, 'loaders/to-lit-css-loader.ts'),
           },
           {
             loader: 'css-loader',

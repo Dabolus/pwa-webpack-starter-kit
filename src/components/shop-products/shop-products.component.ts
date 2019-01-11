@@ -10,10 +10,16 @@ import { addToCart, getAllProducts } from '@actions/shop';
 // These are the reducers needed by this element.
 import { ProductsState } from '@reducers/shop';
 
+import styles from './shop-products.styles';
 import template from './shop-products.template';
+
+// These are the shared styles needed by this element.
+import buttonsSharedStyles from '@components/buttons-shared.styles';
 
 @customElement('shop-products')
 export class ShopProducts extends connect(store)(LitElement) {
+  public static styles = [buttonsSharedStyles, styles];
+
   @property({type: Object})
   protected _products: ProductsState = {};
 
