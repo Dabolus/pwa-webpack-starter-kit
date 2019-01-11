@@ -1,4 +1,4 @@
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 import { ShopCart } from './shop-cart.component';
 
 import styles from './shop-cart.styles';

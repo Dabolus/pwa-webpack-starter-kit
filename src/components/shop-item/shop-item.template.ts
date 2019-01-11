@@ -1,4 +1,4 @@
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 import { ShopItem } from './shop-item.component';
 
 import styles from './shop-item.styles';

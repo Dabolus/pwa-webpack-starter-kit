@@ -1,6 +1,5 @@
-import { customElement, property } from '@components/helpers';
-import { LitElement, PropertyValues } from '@polymer/lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
+import { customElement, LitElement, property, PropertyValues } from 'lit-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { updateMetadata } from 'pwa-helpers/metadata';

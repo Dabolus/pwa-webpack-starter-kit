@@ -1,5 +1,5 @@
-import { customElement } from '@components/helpers';
 import { PageViewElement } from '@components/page-view-element';
+import { customElement } from 'lit-element';
 
 import template from './my-view1.template';
 

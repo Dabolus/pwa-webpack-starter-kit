@@ -1,5 +1,5 @@
-import { customElement, property } from '@components/helpers';
 import { PageViewElement } from '@components/page-view-element';
+import { customElement, property } from 'lit-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 
 // This element is connected to the Redux store.

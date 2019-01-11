@@ -1,4 +1,4 @@
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 import { MyView2 } from './my-view2.component';
 
 import styles from './my-view2.styles';

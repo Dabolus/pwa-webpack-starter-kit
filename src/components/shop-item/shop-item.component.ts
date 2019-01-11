@@ -1,5 +1,4 @@
-import { customElement, property } from '@components/helpers';
-import { LitElement } from '@polymer/lit-element';
+import { customElement, LitElement, property } from 'lit-element';
 
 import template from './shop-item.template';
 

@@ -1,5 +1,5 @@
 import { menuIcon } from '@components/my-icons';
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 import { MyApp } from './my-app.component';
 import styles from './my-app.styles';
 

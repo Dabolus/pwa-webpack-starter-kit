@@ -1,4 +1,4 @@
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 
 // These are the elements needed by this element.
 import { addToCartIcon } from '@components/my-icons';

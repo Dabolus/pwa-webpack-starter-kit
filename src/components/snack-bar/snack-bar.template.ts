@@ -1,4 +1,4 @@
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 import { SnackBar } from './snack-bar.component';
 
 import styles from './snack-bar.styles';

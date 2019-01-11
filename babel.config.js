@@ -13,7 +13,7 @@ module.exports = {
     ['template-html-minifier', {
       modules: {
         'lit-html': ['html', 'svg'], // lit-html
-        '@polymer/lit-element': ['html', 'svg'], // LitElement
+        'lit-element': ['html', 'svg'], // LitElement
         '@polymer/polymer/polymer-element': ['html'], // Polymer 3 - exported from Polymer Element
         '@polymer/polymer/lib/utils/html-tag.js': ['html'], // Polymer 3 - exported from utils (used by PolymerElements family)
       },
