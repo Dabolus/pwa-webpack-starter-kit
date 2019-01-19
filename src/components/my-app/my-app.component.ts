@@ -25,7 +25,7 @@ import template from './my-app.template';
 
 @customElement('my-app')
 export class MyApp extends connect(store)(LitElement) {
-  public static styles = [styles];
+  public static styles = styles;
 
   @property({type: String})
   public appTitle = '';

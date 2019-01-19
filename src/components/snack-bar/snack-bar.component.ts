@@ -5,7 +5,7 @@ import template from './snack-bar.template';
 
 @customElement('snack-bar')
 export class SnackBar extends LitElement {
-  public static styles = [styles];
+  public static styles = styles;
 
   @property({type: Boolean})
   protected active = false;
