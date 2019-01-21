@@ -113,12 +113,11 @@ const cart = (state: CartState, action: ShopAction) => {
         const newState = { ...state };
         delete newState[removeId];
         return newState;
-      } else {
-        return {
-          ...state,
-          [removeId]: quantity,
-        };
       }
+      return {
+        ...state,
+        [removeId]: quantity,
+      };
     case CHECKOUT_SUCCESS:
       return {};
     default:
