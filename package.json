@@ -8,7 +8,8 @@
   "scripts": {
     "gulp": "gulp -f gulp/config.ts --cwd .",
     "start": "cross-env BROWSERSLIST=\"edge > 12\" webpack-dev-server --config webpack/dev.config.ts --hot --color --compress --overlay --history-api-fallback --open",
-    "build:static": "webpack --config webpack/prod.config.ts",
+    "build:static": "cross-env STATIC=true npm run gulp build:es5",
+    "create-build": "webpack --config webpack/prod.config.ts",
     "build": "npm run gulp build",
     "serve": "prpl-server --root build/ --host 0.0.0.0 --https-redirect --bot-proxy https://render-tron.appspot.com/render",
     "lint": "npm run gulp lint",

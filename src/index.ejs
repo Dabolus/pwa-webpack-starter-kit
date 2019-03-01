@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="My App description">
 
-    <base href="<%= htmlWebpackPlugin.options.buildName ? `/${htmlWebpackPlugin.options.buildName}/` : '/' %>">
+    <base href="<%= htmlWebpackPlugin.options.buildName && !htmlWebpackPlugin.options.static ? `/${htmlWebpackPlugin.options.buildName}/` : '/' %>">
 
     <%- include fragments/icons -%>
     <%- include fragments/critical-css -%>
