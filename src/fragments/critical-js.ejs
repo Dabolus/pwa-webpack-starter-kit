@@ -1,4 +1,6 @@
-<% if (htmlWebpackPlugin.options.buildName !== 'es5') { %>
+<% if (htmlWebpackPlugin.options.buildName === 'es5') { %>
+  <script src="components/custom-elements-es5-adapter.js"></script>
+<% } else { %>
   <script>
     // Load and register pre-caching Service Worker
     if ('serviceWorker' in navigator) {

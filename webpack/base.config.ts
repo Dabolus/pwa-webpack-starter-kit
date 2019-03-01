@@ -84,6 +84,11 @@ const config: webpack.Configuration = {
         from: resolve(__dirname, '../src/assets'),
         to: '.',
       },
+      ...process.env.BUILD_NAME === 'es5' ? [
+      {
+        from: resolve(__dirname, '../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
+        to: 'components',
+      }] : [],
     ]),
     new ScriptExtHtmlPlugin({
       defaultAttribute: 'defer',
