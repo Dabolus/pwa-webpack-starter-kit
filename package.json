@@ -38,7 +38,7 @@
     "@babel/preset-typescript": "^7.1.0",
     "@piuccio/ejs-compiled-loader": "^3.0.0",
     "@skatejs/ssr": "^0.19.11",
-    "@types/clean-webpack-plugin": "^0.1.2",
+    "@types/clean-webpack-plugin": "0.1.2",
     "@types/copy-webpack-plugin": "^4.4.2",
     "@types/expect-puppeteer": "^3.3.1",
     "@types/gulp": "^4.0.5",
